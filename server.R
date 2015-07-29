@@ -2,7 +2,7 @@ library(leaflet)
 library(RColorBrewer)
 library(maps)
 
-shinyServer(function(input, output, session) {
+function(input, output, session) {
   values <- reactiveValues(highlight = c())
   
   map <- createLeafletMap(session, "map")
@@ -66,5 +66,5 @@ shinyServer(function(input, output, session) {
       drawStates(getStateName(values$highlight), TRUE)
     })
   })
-})
+}
 
